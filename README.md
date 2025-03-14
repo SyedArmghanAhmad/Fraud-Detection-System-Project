@@ -12,11 +12,13 @@ FraudShield AI is an advanced fraud detection system that combines **machine lea
 3. [Tech Stack](#tech-stack)
 4. [How It Works](#how-it-works)
 5. [Installation](#installation)
-6. [Usage](#usage)
-7. [Model Training](#model-training)
-8. [Dataset](#dataset)
-9. [Contributing](#contributing)
-10. [License](#license)
+6. [Docker Deployment](#docker-deployment)
+7. [Usage](#usage)
+8. [Demonstration](#demonstration)
+9. [Model Training](#model-training)
+10. [Dataset](#dataset)
+11. [Contributing](#contributing)
+12. [License](#license)
 
 ---
 
@@ -28,7 +30,7 @@ FraudShield AI is a full-stack application that detects fraudulent credit card t
 - **Generative AI**: Leverages **LangChain** and **LlamaIndex** to provide human-readable explanations for fraud predictions, especially in borderline cases.
 - **Workflow Automation**: Uses **LangGraph** to orchestrate the fraud detection pipeline, ensuring seamless integration of ML and AI components.
 
-The system is deployed as a **Streamlit** web application with a modern, fintech-inspired UI.
+The system is deployed as a **Streamlit** web application with a modern, fintech-inspired UI and is fully **Dockerized** for easy deployment.
 
 ---
 
@@ -40,6 +42,8 @@ The system is deployed as a **Streamlit** web application with a modern, fintech
 - **Fraud Pattern Recognition**: Identify common fraud patterns using **LlamaIndex**-powered document retrieval.
 - **Interactive Dashboard**: Visualize fraud trends, model performance, and transaction details.
 - **Scalable Workflow**: Built with **LangGraph** for modular and scalable fraud detection pipelines.
+- **Dockerized**: Easily deployable using Docker and available on **Docker Hub**.
+- **Demonstration**: Includes a **demo video** and **sample data** for testing.
 
 ---
 
@@ -69,8 +73,9 @@ The system is deployed as a **Streamlit** web application with a modern, fintech
 
 ### Deployment
 
+- **Docker**: For containerization and easy deployment.
+- **Docker Hub**: Hosting the Docker image for public access.
 - **Joblib**: For saving and loading trained models and scalers.
-- **Docker**: For containerization (optional).
 
 ---
 
@@ -102,6 +107,7 @@ The system is deployed as a **Streamlit** web application with a modern, fintech
 
 - Python 3.9 or higher.
 - [Groq API Key](https://wow.groq.com/) for LLM inference.
+- Docker (optional, for containerized deployment).
 
 ### Steps
 
@@ -133,6 +139,40 @@ The system is deployed as a **Streamlit** web application with a modern, fintech
 
 ---
 
+## Docker Deployment
+
+### Pull from Docker Hub
+
+You can pull the pre-built Docker image from Docker Hub:
+
+```bash
+docker pull your-dockerhub-atmghan/fraud-detection:latest
+```
+
+### Run the Docker Container
+
+```bash
+docker run -p 8501:8501 -e GROQ_API_KEY=your_api_key_here your-dockerhub-username/fraudshield-ai
+```
+
+### Build Locally
+
+1. Build the Docker image:
+
+   ```bash
+   docker build -t fraudshield-ai .
+   ```
+
+2. Run the container:
+
+   ```bash
+   docker run -p 8501:8501 -e GROQ_API_KEY=your_api_key_here fraudshield-ai
+   ```
+
+The application will be available at `http://localhost:8501`.
+
+---
+
 ## Usage
 
 1. **Single Transaction Analysis**:
@@ -143,8 +183,23 @@ The system is deployed as a **Streamlit** web application with a modern, fintech
    - Upload a CSV file containing transaction data.
    - The system will process the file and display results for each transaction.
 
-3. **Dashboard**:
-   - View fraud trends, model performance metrics, and top predictive features.
+3. **Model Insights**:
+   - View model performance metrics, and top predictive features.
+
+---
+
+## Demonstration
+
+To help you get started, we’ve included a **demonstration folder** containing:
+
+- **Demo Video**: A walkthrough of the application’s features and functionality.
+- **Sample Data**: Example CSV files for testing the batch analysis feature.
+
+### How to Use the Sample Data
+
+1. Navigate to the `demonstration` folder.
+2. Use the provided CSV files (e.g., `sample_transactions.csv`) to test the batch analysis feature.
+3. Watch the demo video to see the system in action.
 
 ---
 
@@ -157,7 +212,7 @@ The XGBoost model was trained on the [Kaggle Credit Card Fraud Dataset](https://
 - **Model Training**: Training an XGBoost classifier with optimized hyperparameters.
 - **Evaluation**: Achieving an **AUPRC of 0.87** and **recall of 0.86** on the test set.
 
-For detailed training code, refer to the [Model Training Notebook](#).
+For detailed training code, refer to the [Model Training Notebook].
 
 ---
 
@@ -197,5 +252,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Kaggle](https://www.kaggle.com/) for providing the dataset.
 - [LangChain](https://www.langchain.com/), [LlamaIndex](https://www.llamaindex.ai/), and [LangGraph](https://www.langgraph.com/) for enabling generative AI capabilities.
 - [Streamlit](https://streamlit.io/) for the interactive web interface.
-
----
+- [Docker](https://www.docker.com/) for containerization and deployment.
