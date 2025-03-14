@@ -1,0 +1,10 @@
+feature,condition,risk_level,description,fraud_type
+V10,Value < -8.0,Critical,"Extremely low V10 values indicate high-risk transactions, often linked to stolen cards.",micro_fraud
+V12,Value < -5.0,High,Low V12 values correlate with stolen card usage.,micro_fraud
+V3,Value < -2.0,Medium,Low V3 values indicate potential fraud.,micro_fraud
+V4,Value > 5.0,High,High V4 values suggest unusual spikes in transaction frequency.,high_velocity_fraud
+V2,Value > 3.0,Medium,High V2 values suggest unusual transaction patterns.,high_velocity_fraud
+V16,Value > 4.0,Medium,High V16 values suggest unusual transaction patterns.,high_velocity_fraud
+V14,Value < -10.0,Critical,Extremely low V14 values correlate with card-not-present fraud.,night_fraud
+V17,Value < -15.0,High,Low V17 values indicate geolocation anomalies.,night_fraud
+V7,Value < -3.0,Medium,Low V7 values indicate potential fraud.,night_fraud
