@@ -160,7 +160,7 @@ docker run -p 8501:8501 -e GROQ_API_KEY=your_api_key_here your-dockerhub-usernam
 1. Build the Docker image:
 
    ```bash
-   docker build -t fraudshield-ai .
+   docker build -t fraud-detection .
    ```
 
 2. Run the container:
