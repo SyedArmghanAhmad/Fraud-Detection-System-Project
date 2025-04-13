@@ -114,8 +114,8 @@ The system is deployed as a **Streamlit** web application with a modern, fintech
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/FraudShield-AI.git
-   cd FraudShield-AI
+   git clone https://github.com/SyedArmghanAhmad/Fraud-Detection-System-Project.git
+   cd Fraud-Detection-System-Project
    ```
 
 2. Install dependencies:
